@@ -37,6 +37,7 @@ func main() {
 
 	fmt.Println(i, hi, k, y, secondStatement) // shortcut to print multiple things on one line separated by a space
 
+	// arithmetic on numeric variables
 	fmt.Println(2 * (i + 5) * k)
 	fmt.Println(2 * y - 3.16)
 
