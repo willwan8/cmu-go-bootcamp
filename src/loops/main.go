@@ -57,3 +57,22 @@ func Factorial(n int) int {
 
 	return p
 }
+
+// SumFirstNIntegers takes as input an integer n and returns the sum of the first n positive integers.
+func SumFirstNIntegers(n int) int {
+	if n < 0 {
+		panic("Error: negative input given to SumFirstNIntegers()")
+	}
+
+	sum := 0 // will store the final answer
+	i := 1 // represents current integer being added to sum
+
+	for i <= n {
+		sum += i // shorthand for sum = sum + i
+		// also have sum -= i, sum *= i, sum /= i
+		i++ // shorthand for i = i + 1
+		// there is also i-- for i = i - 1
+	}
+
+	return sum
+}
