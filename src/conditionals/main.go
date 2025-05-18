@@ -22,6 +22,21 @@ func Min2(a, b int) int {
 	}
 }
 
+// PositiveDifference takes as input two integers.
+// It returns the absolute value of the difference between these integers.
+func PositiveDifference(a, b int) int {
+	var c int 
+	if a == b {
+		return 0
+	} else if  a > b {
+		c = a - b
+	} else {
+		// can safely infer that b > a
+		c = b - a
+	}
+	return c
+}
+
 // SameSign takes as input two integers.
 // It returns true if the two integers have the same sign and false if they have different signs.
 func SameSign(x, y int) bool {
@@ -32,6 +47,8 @@ func SameSign(x, y int) bool {
 	} else { // I know that x * y < 0
 		return false
 	}
+
+	// one line function: return x * y >= 0 (this expression will return a boolean value)
 }
 
 // WhichIsGreater compares two input integers and returns...
@@ -49,3 +66,14 @@ func WhichIsGreater(x, y int) int {
 		return -1
 	}
 }
+
+// index of comparison operators
+/*
+> : more than
+< : less than
+>= : greater than or equal to
+<= : less than or equal to
+== : equal to
+!= : not equal to
+! : "not". For example, if x is Boolean, then !x is false when x is true and true when x is false
+*/
