@@ -5,6 +5,11 @@ import (
 	"io"
 	"log"
 	"net/http"
+	/* installing this was very problematic, so skipped the diagram stuff
+	"pkg/mod/gonum.org/v1/plot"
+	"pkg/mod/gonum.org/v1/plot/plotter" // include line graph support
+	"pkg/mod/gonum.org/v1/plot/vg" // support for vector graphics and image generation
+	*/
 )
 
 // MinimumSkew
@@ -110,4 +115,65 @@ func main() {
 	firstPosition := minSkewPositions[0]
 
 	fmt.Println("The minimum skew of", EcoliSkewArray[firstPosition], "occurs at positions", minSkewPositions)
+
+	/*
+	// draw the skew diagram
+	MakeSkewDiagram(EcoliSkewArray)
+	*/
 }
+
+// MakeSkewDiagram
+// Input: A skew array.
+// Output: (none)
+// Draws the skew diagram of the given skew array to an image and saves to file.
+/* 
+installing w/ go get provided too many problems, so just skipped this image forming part
+func MakeSkewDiagram(skewArray []int) {
+	p := plot.New() // creates new plotter object
+
+	p.Title.Text = "Skew Diagram"
+	p.X.Label.Text = "Genome Position"
+	p.Y.Label.Text = "Skew value"
+
+	// remove legend
+	p.Legend.Top = false
+
+	// make a collection of points associated with each skew value
+	points := make(plotter.XYs, len(skewArray))
+
+	// set the X and Y value of each point
+	for i, val := range SkewArray {
+		points[i].X = float64(i)
+		points[i].Y = float64(skewValue)
+	}
+
+	// connect the dots!
+	line, err := plotter.NewLine(points)
+
+	if err != nil {
+		panic(err)
+	}
+
+	// add our line to the plot
+	p.Add(line)
+
+	// draw to an image
+
+	// first, set a unit of length
+	unitOflength := vg.Centimeter
+
+	// make label fonts bigger
+	p.X.Label.TextStyle.Font.Size = 3 * unitOfLength
+	p.Y.Label.TextStyle.Font.Size = 3 * unitOfLength
+	p.Title.TextStyle.Font.Size = 4 * unitOfLength
+	p.X.Tick.Label.Font.Size = 2 * unitOfLength
+	p.Y.Tick.Label.Font.Size = 2 * unitOfLength
+
+	// save my plot to a PNG
+	err = p.Save(100*unitOflength, 60*unitOflength, "skewDiagram.png")
+
+	if err != nil {
+		panic(err)
+	}
+}
+*/
